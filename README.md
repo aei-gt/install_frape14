@@ -126,3 +126,11 @@ bench --site misitio.gt set-config --global developer_mode 1
 # Delete site
 bench drop-site misitio.gt --no-backup
 
+# Add support to FEL Guatemala
+bench get-app --branch production https://github.com/sihaysistema/factura_electronica_gt.git
+bench install-app factura_electronica
+bench setup requirements
+bench update --patch
+bench migrate
+bench build --app factura_electronica
+bench restart && bench clear-cache
