@@ -39,50 +39,71 @@ sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
 # change line to utf8mb4_unicode_ci or fail next steps
 
 #mariadb.conf.d
+
 sudo nano /etc/mysql/my.cnf
 
 [mysqld]
+
 character-set-client-handshake = FALSE
+
 character-set-server = utf8mb4
+
 collation-server = utf8mb4_unicode_ci
-#innodb_buffer_pool_size=6G
-#innodb_log_file_size=2G
-#query_cache_size=64M
-#skip-name-resolve
-#max_heap_table_size=64M
-#tmp_table_size=64M
+
 
 [mysql]
+
 default-character-set = utf8mb4
+
 sudo service mysql restart
 
+
 sudo apt install curl
+
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+
 source ~/.profile
+
 nvm install 16.15.0
+
 sudo apt-get install npm
+
 sudo npm install -g yarn
 
+
 sudo pip3 install frappe-bench
+
 bench init --frappe-branch version-14 frappe-bench
 
+
 cd frappe-bench/
+
 chmod -R o+rx /home/frappe/
 
 bench new-site misitio.gt
 
 bench get-app --branch version-14 erpnext
+
 bench get-app payments
+
 bench get-app hrms
+
 bench get-app ecommerce_integrations --branch main
 
+
 bench --site misitio.gt install-app erpnext
+
 bench --site misitio.gt install-app payments
+
 bench --site misitio.gt install-app hrms
+
 bench --site misitio.gt install-app ecommerce_integrations
 
+
 bench --site  misitio.gt enable-scheduler
+
 bench --site  misitio.gt set-maintenance-mode off
+
 
 sudo bench setup production frappe
 
@@ -96,13 +117,19 @@ sudo bench setup production frappe
 # Change version pdf 
 
 sudo apt-get remove wkhtmltopdf
+
 wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+
 sudo apt-get install -y xfonts-75dpi
+
 sudo dpkg -i wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+
 wkhtmltopdf -V
 
 # Add Firewall support
+
 ufw allow 22,25,143,80,443,3306,3022,8000/tcp
+
 ufw enable
 
 
@@ -111,12 +138,17 @@ ufw enable
 bench config dns_multitenant on
 
 bench new-site misitio2.gt
+
 bench setup nginx
+
 sudo service nginx reload
 
 bench --site misitio2.gt install-app erpnext
+
 bench --site misitio2.gt install-app payments
+
 bench --site misitio2.gt install-app hrms
+
 bench --site misitio2.gt install-app ecommerce_integrations
 
 
