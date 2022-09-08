@@ -43,17 +43,14 @@ sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
 sudo nano /etc/mysql/my.cnf
 
 [mysqld]
-
 character-set-client-handshake = FALSE
-
 character-set-server = utf8mb4
-
 collation-server = utf8mb4_unicode_ci
 
-
 [mysql]
-
 default-character-set = utf8mb4
+
+# close and save
 
 sudo service mysql restart
 
@@ -150,6 +147,7 @@ bench --site misitio2.gt install-app payments
 bench --site misitio2.gt install-app hrms
 
 bench --site misitio2.gt install-app ecommerce_integrations
+# Remember maybe need restart to init supervisorctl
 
 
 # Add developer mode
@@ -162,15 +160,16 @@ bench drop-site misitio.gt --no-backup
 
 bench get-app --branch production https://github.com/sihaysistema/factura_electronica_gt.git
 
-bench install-app factura_electronica
+bench --site misitio.gt  install-app factura_electronica
 
 bench setup requirements
 
 bench update --patch
 
-bench migrate
+bench --site misitio.local migrate
 
 bench build --app factura_electronica
 
 bench restart && bench clear-cache
+# Remember maybe need restart to init supervisorctl
 
