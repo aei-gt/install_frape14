@@ -110,7 +110,8 @@ sudo supervisorctl restart all
 
 sudo bench setup production frappe
 
-# Optional POST install
+# *** Optional POST install ***
+
 # Change version pdf 
 
 sudo apt-get remove wkhtmltopdf
@@ -172,6 +173,11 @@ bench --site misitio.local migrate
 
 bench build --app factura_electronica
 
+
+bench --site misitio.local migrate
+bench build --app factura_electronica
+
 bench restart && bench clear-cache
+
 # Remember maybe need restart to init supervisorctl
 
