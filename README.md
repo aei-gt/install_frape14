@@ -149,14 +149,16 @@ bench --site misitio2.gt install-app hrms
 bench --site misitio2.gt install-app ecommerce_integrations
 # Remember maybe need restart to init supervisorctl
 
-
 # Add developer mode
 bench --site misitio.gt set-config --global developer_mode 1
 
 # Delete site
 bench drop-site misitio.gt --no-backup
 
-# Add support to FEL Guatemala
+# Delete APP
+bench --site misite.local uninstall-app hrms --no-backup
+
+# Add support to FEL Guatemala  (In testing on V14)
 
 bench get-app --branch production https://github.com/sihaysistema/factura_electronica_gt.git
 
