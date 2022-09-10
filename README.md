@@ -4,11 +4,15 @@ Install instructions to frappe/erpnext 14 on ubuntu 22.04
 timedatectl set-timezone "America/Guatemala"
 
 sudo apt-get update -y
+
 sudo apt-get upgrade -y
 
 sudo adduser frappe
+
 sudo usermod -aG sudo frappe
+
 su frappe
+
 cd /home/frappe/
 
 
@@ -31,11 +35,13 @@ sudo apt-get install xvfb libfontconfig wkhtmltopdf
 sudo apt-get install libmysqlclient-dev
 
 sudo service mysql restart
+
 sudo mysql_secure_installation
 
 
 #
 sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
+
 # change line to utf8mb4_unicode_ci or fail next steps
 
 #mariadb.conf.d
