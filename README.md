@@ -181,6 +181,7 @@ bench build --app factura_electronica
 
 
 bench --site misitio.local migrate
+
 bench build --app factura_electronica
 
 bench restart && bench clear-cache
