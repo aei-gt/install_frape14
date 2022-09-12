@@ -190,6 +190,9 @@ bench restart && bench clear-cache
 
 # * * * Other operations V14 (notes) * * * 
 
+# Create a new app (bench)
+bench new-app myapp_name
+
 # Delete app from site
 bench --site misitio.local uninstall-app myapp_name
 
