@@ -16,23 +16,23 @@ su frappe
 cd /home/frappe/
 
 
-sudo apt-get install git
+sudo apt-get install git -y
 
-sudo apt-get install python3-dev python3.10-dev python3-setuptools python3-pip python3-distutils
+sudo apt-get install python3-dev python3.10-dev python3-setuptools python3-pip python3-distutils -y
 
-sudo apt-get install python3.10-venv
+sudo apt-get install python3.10-venv -y
 
-sudo apt-get install software-properties-common
+sudo apt-get install software-properties-common -y
 
-sudo apt install mariadb-server mariadb-client
+sudo apt install mariadb-server mariadb-client -y
 
 mariadb --version
 
-sudo apt-get install redis-server
+sudo apt-get install redis-server -y
 
-sudo apt-get install xvfb libfontconfig wkhtmltopdf
+sudo apt-get install xvfb libfontconfig wkhtmltopdf -y
 
-sudo apt-get install libmysqlclient-dev
+sudo apt-get install libmysqlclient-dev -y
 
 sudo service mysql restart
 
@@ -61,7 +61,7 @@ default-character-set = utf8mb4
 sudo service mysql restart
 
 
-sudo apt install curl
+sudo apt install curl -y
 
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
@@ -69,12 +69,12 @@ source ~/.profile
 
 nvm install 16.15.0
 
-sudo apt-get install npm
+sudo apt-get install npm -y
 
-sudo npm install -g yarn
+sudo npm install -g yarn -y
 
 
-sudo pip3 install frappe-bench
+sudo pip3 install frappe-bench 
 
 bench init --frappe-branch version-14 frappe-bench
 
@@ -187,3 +187,41 @@ bench restart && bench clear-cache
 
 # Remember maybe need restart to init supervisorctl
 
+
+# * * * Other operations V14 (notes) * * * 
+
+# Delete app from site
+bench --site misitio.local uninstall-app myapp_name
+
+# Delete all app from site 
+bench remove-app myapp_name
+
+# Connect app (local) to a remote repository (github) | Command in local app to connect like "/apps/myapp_name$"
+git remote add origin https://github.com/usergit/myapp_name.git
+
+# Connect and push to a "master" branch
+git branch -M master
+git push -u origin master
+
+# Change to a "develop" or any other branch
+git checkout -b develop
+git push --set-upstream origin develop
+
+# Show status git
+git status
+
+# Add files to committed git
+git add .
+
+# Commit and send changes to git branch develop
+git commit -m "some files change descriptions"
+git push origin develop
+
+# Return git change from github branch to local 
+
+
+
+
+
+
+ 
