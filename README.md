@@ -201,10 +201,12 @@ git remote add origin https://github.com/usergit/myapp_name.git
 
 # Connect and push to a "master" branch
 git branch -M master
+
 git push -u origin master
 
 # Change to a "develop" or any other branch
 git checkout -b develop
+
 git push --set-upstream origin develop
 
 # Show status git
@@ -215,6 +217,7 @@ git add .
 
 # Commit and send changes to git branch develop
 git commit -m "some files change descriptions"
+
 git push origin develop
 
 # Return git change from github branch to local 
