@@ -190,6 +190,16 @@ bench restart && bench clear-cache
 
 # * * * Other operations V14 (notes) * * * 
 
+# Active developer mode (bench) Desk -> User dropdown list -> Set Desktop Icons -> check "Developer"
+bench set-config developer_mode 1
+
+bench clear-cache
+
+bench setup requirements --dev
+
+#
+
+
 # Create a new app (bench)
 bench new-app myapp_name
 
