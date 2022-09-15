@@ -11,8 +11,6 @@ sudo adduser frappe
 
 sudo usermod -aG sudo frappe
 
-sudo frappe
-
 su frappe
 
 cd /home/frappe/
