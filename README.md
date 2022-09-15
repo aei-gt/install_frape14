@@ -82,6 +82,9 @@ sudo pip3 install frappe-bench
 
 bench init --frappe-branch version-14 frappe-bench
 
+npx browserslist@latest --update-db
+
+npm install -g npm@8.19.2
 
 cd frappe-bench/
 
