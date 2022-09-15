@@ -1,7 +1,7 @@
 # install_frape14
 Install instructions to frappe/erpnext 14 on ubuntu 22.04
 
-timedatectl set-timezone "America/Guatemala"
+sudo timedatectl set-timezone "America/Guatemala"
 
 sudo apt-get update -y
 
