@@ -49,6 +49,7 @@ sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
 sudo nano /etc/mysql/my.cnf
 
 [mysqld]
+
 character-set-client-handshake = FALSE
 
 character-set-server = utf8mb4
