@@ -9,7 +9,7 @@ sudo apt-get upgrade -y
 
 sudo adduser frappe
 
-sudo usermod -aG 
+sudo usermod -aG sudo frappe
 
 sudo frappe
 
