@@ -212,6 +212,8 @@ bench --site misitio.local uninstall-app myapp_name
 # Delete all app from site 
 bench remove-app myapp_name
 
+bench --site all uninstall-app tareas --force
+
 # Connect app (local) to a remote repository (github) | Command in local app to connect like "/apps/myapp_name$"
 git remote add origin https://github.com/usergit/myapp_name.git
 
