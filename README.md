@@ -84,7 +84,7 @@ bench init --frappe-branch version-14 frappe-bench
 
 npx browserslist@latest --update-db
 
-npm install -g npm@8.19.2
+npm install -g npm@9.1.1
 
 cd frappe-bench/
 
