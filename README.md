@@ -209,6 +209,10 @@ bench new-app myapp_name
 # Delete app from site
 bench --site misitio.local uninstall-app myapp_name
 
+or 
+
+bench --site misitio.local uninstall-app ecommerce_integrations --force
+
 # Delete all app from site 
 bench remove-app myapp_name
 
