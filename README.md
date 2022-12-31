@@ -201,6 +201,9 @@ bench clear-cache
 bench setup requirements --dev
 
 #
+bench set-maintenance-mode off
+
+
 
 
 # Create a new app (bench)
