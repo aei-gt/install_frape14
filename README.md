@@ -210,7 +210,7 @@ bench set-maintenance-mode off
 bench new-app myapp_name
 
 # Delete app from site
-bench --site misitio.local uninstall-app myapp_name
+bench --site {site} uninstall-app {app} --force --no-backup
 
 or 
 
