@@ -174,7 +174,7 @@ bench --site misite.local uninstall-app hrms --no-backup
 
 # Add support to FEL Guatemala  (In testing on V14)
 
-bench get-app --branch production https://github.com/sihaysistema/factura_electronica_gt.git
+bench get-app --branch production-v14 https://github.com/sihaysistema/factura_electronica_gt.git
 
 bench --site misitio.gt  install-app factura_electronica
 
