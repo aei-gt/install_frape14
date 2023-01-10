@@ -265,4 +265,6 @@ chown=frappe:frappe
 sudo -A systemctl restart supervisor
 
 
+ # Reset Site to default values
+ bench --site site_name reinstall
  
