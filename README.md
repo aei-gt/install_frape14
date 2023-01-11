@@ -255,10 +255,13 @@ chmod -R o+rx /home/frappe
 
 
 sudo nano /etc/supervisor/supervisord.conf
+
 (Add these lines under [unix_http_server])
 --------
 chmod=0760
+
 chown=frappe:frappe
+
 -----
 
 
