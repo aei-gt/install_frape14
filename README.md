@@ -188,6 +188,8 @@ bench --site misitio.local migrate
 
 bench restart && bench clear-cache
 
+bench build --app factura_electronica --production
+
 # Remember maybe need restart to init supervisorctl
 
 
