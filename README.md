@@ -172,6 +172,8 @@ bench drop-site misitio.gt --no-backup
 # Delete APP
 bench --site misite.local uninstall-app hrms --no-backup
 
+bench --site misite.local remove-from-installed-apps frappedesk
+
 # Add support to FEL Guatemala  (In testing on V14)
 
 bench get-app --branch production-v14 https://github.com/sihaysistema/factura_electronica_gt.git --resolve-deps
