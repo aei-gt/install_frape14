@@ -267,8 +267,9 @@ chmod=0760
 chown=frappe:frappe
 
 -----
-
-
+# Restore database (copy uncompressed file .sql in frappe location.
+bench --site misite.com --force restore 20231102_060002-misite-database.sql
+---
 sudo -A systemctl restart supervisor
 
 
