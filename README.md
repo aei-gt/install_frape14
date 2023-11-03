@@ -290,7 +290,10 @@ nvm list-remote
 
 nvm install v20.9.0
 
+nvm alias default v20.9.0
+
 node -v
+
 
 
 
