@@ -296,6 +296,10 @@ node -v
 
 # Change branch to specific (V15)
 
+bench get-app hrms --branch version-15
+
+bench --site [sitename] install-app hrms
+
 cd apps/hrms
 git fetch upstream version-15:version-15
 git checkout version-15
@@ -305,3 +309,6 @@ or
 bench update
 
 ----
+
+
+
