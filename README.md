@@ -1,5 +1,5 @@
-# install_frape14
-Install instructions to frappe/erpnext 14 on ubuntu 22.04
+# install_frape15
+Install instructions to frappe/erpnext 15 on ubuntu 22.04
 
 sudo timedatectl set-timezone "America/Guatemala"
 
@@ -294,7 +294,14 @@ nvm alias default v20.9.0
 
 node -v
 
+# Change branch to specific (V15)
 
-
+cd apps/hrms
+git fetch upstream version-15:version-15
+git checkout version-15
+cd ../..
+bench --site [sitename] migrate
+or
+bench update
 
 ----
